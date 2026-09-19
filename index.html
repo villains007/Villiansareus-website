@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Villains Are Us | Talent Agency</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-poster-page">
+  <main>
+    <section class="home-final-hero" aria-label="Villains Are Us home page">
+      <div class="home-final-stage">
+        <img src="images/home-3x4-final.jpeg" alt="Villains Are Us talent agency">
+        <div class="home-final-glow" aria-hidden="true"></div>
+
+        <button class="home-menu-hotspot" type="button" aria-label="Open menu" aria-expanded="false"></button>
+        <a class="home-talent-hotspot" href="talent.html" aria-label="Explore talent"></a>
+        <a class="home-class-hotspot" href="classes.html" aria-label="Book a class"></a>
+
+        <nav class="home-menu-panel" aria-label="Main navigation">
+          <button class="home-menu-close" type="button" aria-label="Close menu">×</button>
+          <a href="index.html">HOME</a>
+          <a href="talent.html">TALENT</a>
+          <a href="extras.html">TV &amp; FILM EXTRAS</a>
+          <a href="classes.html">1-TO-1 CLASSES</a>
+          <a href="about.html">ABOUT US</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
+      </div>
+    </section>
+    <section class="home-connect-strip" aria-label="Industry tools and social media">
+      <div class="home-connect-inner">
+        <div class="home-connect-item tagmin-item">
+          <img src="images/tagmin-talent-logo.jpeg" alt="Tagmin Talent" class="tagmin-logo">
+        </div>
+        <a class="home-connect-item instagram-item" href="https://www.instagram.com/villainsareus007/" target="_blank" rel="noopener" aria-label="Villains Are Us on Instagram @villainsareus007">
+          <svg class="instagram-logo" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.4" cy="6.6" r="1"></circle>
+          </svg>
+          <span>@villainsareus007</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="credits-section">
+      <div class="credits-inner">
+        <div class="credits-heading">
+          <div class="red">SELECTED CREDITS &amp; INDUSTRY EXPERIENCE</div>
+          <h2>Productions we have worked alongside.</h2>
+          <p>Our represented talent and supporting artists have contributed to film and television productions and worked across leading UK broadcasters and platforms. Selected credits and industry experience include:</p>
+        </div>
+        <div class="credits-grid">
+          <article class="credit-card credit-poster">
+            <img src="images/production-the-force.jpeg" alt="The Force — The Michael Watson Story">
+            <div class="credit-caption"><strong>The Force</strong><span>The Michael Watson Story</span></div>
+          </article>
+          <article class="credit-card credit-poster">
+            <img src="images/production-the-gentlemen.jpeg" alt="The Gentlemen">
+            <div class="credit-caption"><strong>The Gentlemen</strong><span>Television production</span></div>
+          </article>
+          <article class="credit-card credit-logo">
+            <img src="images/industry-film4.jpeg" alt="Film4">
+            <div class="credit-caption"><strong>Film4</strong><span>Film &amp; broadcast</span></div>
+          </article>
+          <article class="credit-card credit-logo">
+            <img src="images/industry-sky.jpeg" alt="Sky">
+            <div class="credit-caption"><strong>Sky</strong><span>Television &amp; entertainment</span></div>
+          </article>
+          <article class="credit-card credit-logo netflix-card">
+            <div class="netflix-wordmark" role="img" aria-label="Netflix">NETFLIX</div>
+            <div class="credit-caption"><strong>Netflix</strong><span>Film &amp; television</span></div>
+          </article>
+        </div>
+        <p class="credits-note">Selected examples shown for professional portfolio purposes. Individual credits and production involvement vary by artist and project.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">VILLAINS ARE US · TALENT AGENCY · FILM · TELEVISION · THEATRE</footer>
+
+  <script>
+    const menuButton = document.querySelector('.home-menu-hotspot');
+    const menuPanel = document.querySelector('.home-menu-panel');
+    const closeButton = document.querySelector('.home-menu-close');
+    function setMenu(open) {
+      menuPanel.classList.toggle('open', open);
+      menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    menuButton.addEventListener('click', () => setMenu(!menuPanel.classList.contains('open')));
+    closeButton.addEventListener('click', () => setMenu(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  </script>
+</body>
+</html>

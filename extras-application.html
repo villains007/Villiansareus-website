@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Join TV & Film Extras | Villains Are Us</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.email-flow-note{border:1px solid rgba(202,164,73,.45);background:rgba(202,164,73,.06);padding:18px;margin:18px 0;line-height:1.65}.email-flow-note strong{color:#d9b55f}.email-steps{display:grid;gap:12px;margin:18px 0}.email-step{border-left:3px solid #a80000;padding:10px 0 10px 14px}.email-step b{color:#d9b55f}.payment-panel{margin-top:24px;padding:22px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.025)}.payment-panel h3{margin-top:0}.btn.disabled{opacity:.48;pointer-events:none}.attach-warning{font-size:.9rem;color:#ddd}.form-message.show{display:block}.form-message{display:none;margin-top:14px;padding:12px 14px;border:1px solid rgba(202,164,73,.35)}
+</style>
+</head>
+<body>
+<header><div class="nav"><a class="brand" href="index.html"><img src="images/logo.jpg" alt="Villains Are Us"><span>VILLAINS ARE US</span></a><button class="menu" onclick="document.querySelector('.links').classList.toggle('open')">MENU ☰</button><div class="links"><a href="index.html">HOME</a><a href="talent.html">TALENT</a><a href="extras.html">TV &amp; FILM EXTRAS</a><a href="classes.html">1-TO-1 CLASSES</a><a href="about.html">ABOUT US</a><a href="contact.html">CONTACT</a></div></div></header>
+
+<main class="application-shell">
+<section class="application-intro">
+  <div class="eyebrow">VILLAINS ARE US</div>
+  <h1>TV &amp; Film Extras<br><span>Application</span></h1>
+  <p>Complete your details, read and accept the agreement, then open your email application. Attach one recent headshot before you send it.</p>
+  <div class="membership-chip"><strong>£11.99</strong><span>12-month membership</span></div>
+</section>
+
+<section class="application-layout">
+<form id="extras-email-form" class="extras-form">
+  <h2>Your details</h2>
+  <label>Full name<input id="full_name" name="full_name" type="text" maxlength="120" required></label>
+  <label>Date of birth<input id="date_of_birth" name="date_of_birth" type="date" required></label>
+  <label>Email address<input id="email" name="email" type="email" maxlength="254" required></label>
+  <label>Phone number <em>optional</em><input id="phone" name="phone" type="tel" maxlength="40"></label>
+
+  <div class="email-flow-note">
+    <strong>Headshot:</strong> after you tap the application button below, your email app will open with your details already filled in. Please attach <strong>one recent, clear headshot photograph</strong> to that email before sending.
+  </div>
+
+  <div class="agreement-box">
+    <h2>TV &amp; Film Extras Membership Agreement</h2>
+    <p>By applying to join Villains Are Us TV &amp; Film Extras, you confirm that the information you provide is accurate and that you have permission to submit the headshot supplied.</p>
+    <p>Membership costs <strong>£11.99 for 12 months</strong>. Membership allows Villains Are Us to keep your submitted details and headshot on its TV &amp; Film Extras database and consider you for suitable background and supporting opportunities.</p>
+    <p><strong>Membership does not guarantee employment, bookings, auditions, a minimum amount of work or selection for any production.</strong> Opportunities depend on production requirements, casting criteria, suitability, location and your availability.</p>
+    <p>You consent to Villains Are Us storing and processing your submitted details and headshot for extras administration, casting consideration, availability requests, submissions to legitimate casting or production professionals where relevant, and booking administration.</p>
+    <p>When suitable opportunities arise, Villains Are Us may contact you by email with availability requests, filming dates, locations, call times, wardrobe or appearance requirements, available payment information and production instructions. An availability request is not a confirmed booking.</p>
+    <p>If booked, you agree to follow reasonable production instructions, behave professionally and comply with relevant confidentiality, safety, appearance, wardrobe and conduct requirements.</p>
+    <p>You may request correction or deletion of your profile by contacting <a href="mailto:info@villiansareus.co.uk">info@villiansareus.co.uk</a>, subject to lawful retention requirements. Nothing in this agreement affects your statutory rights under UK law.</p>
+    <label class="check"><input id="agreement_accepted" name="agreement_accepted" type="checkbox" required><span>I have read and agree to the TV &amp; Film Extras Membership Agreement and understand that membership does not guarantee work.</span></label>
+  </div>
+
+  <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+  <button class="btn redbtn pay-submit" type="submit">EMAIL APPLICATION &amp; HEADSHOT →</button>
+  <p class="small-note">Your email app will open with your details filled in. Attach one headshot before pressing Send.</p>
+
+  <div class="payment-panel">
+    <div class="eyebrow">STEP 2</div>
+    <h3>Annual membership payment</h3>
+    <p>After sending your application and headshot, complete the £11.99 annual membership payment using the same email address so we can match your payment to your application.</p>
+    <a id="extras-payment-button" class="btn redbtn" href="https://buy.stripe.com/bJe7sNdvO19DaCUfxCgbm01" target="_blank" rel="noopener">PAY £11.99 ANNUAL MEMBERSHIP →</a>
+    <p class="small-note">Secure payment via Stripe. Please use the same email address as your application so we can match your payment.</p>
+  </div>
+</form>
+
+<aside class="application-aside">
+  <img src="images/logo.jpg" alt="Villains Are Us">
+  <h3>What happens next</h3>
+  <ol>
+    <li>Complete your details and accept the agreement.</li>
+    <li>Open the prepared email and attach one recent headshot.</li>
+    <li>Send it to <strong>info@villiansareus.co.uk</strong>.</li>
+    <li>Complete the £11.99 annual payment using the same email address.</li>
+    <li>Keep an eye on your email for suitable availability requests, dates, locations and instructions.</li>
+  </ol>
+</aside>
+</section>
+</main>
+<footer class="footer">VILLAINS ARE US · TV &amp; FILM EXTRAS</footer>
+
+<script>
+const form=document.getElementById('extras-email-form');
+const msg=document.getElementById('form-message');
+form.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  if(!form.reportValidity()) return;
+  if(!document.getElementById('agreement_accepted').checked){
+    msg.textContent='Please read and accept the membership agreement before continuing.';
+    msg.classList.add('show');
+    return;
+  }
+  const name=document.getElementById('full_name').value.trim();
+  const dob=document.getElementById('date_of_birth').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const phone=document.getElementById('phone').value.trim() || 'Not provided';
+  const subject=`TV & Film Extras Application — ${name}`;
+  const body=`TV & FILM EXTRAS APPLICATION
+
+Full name: ${name}
+Date of birth: ${dob}
+Email: ${email}
+Phone: ${phone}
+
+AGREEMENT
+I confirm that I have read and agree to the Villains Are Us TV & Film Extras Membership Agreement. I understand that membership costs £11.99 for 12 months and does not guarantee work or bookings.
+
+HEADSHOT
+Please attach one recent headshot photograph to this email before sending.
+
+I understand that Villains Are Us may contact me by email with availability requests, dates, locations, call times and production instructions.`;
+  msg.textContent='Your email app is opening. Please attach one recent headshot before you send the email.';
+  msg.classList.add('show');
+  window.location.href=`mailto:info@villiansareus.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>
